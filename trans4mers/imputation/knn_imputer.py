@@ -13,7 +13,7 @@ class KNNImputer(TransformerMixin):
         self.k = k
 
     def fit(self, X, y=None):
-        pass
+        return self
 
     def transform(self, X, y=None):
         """

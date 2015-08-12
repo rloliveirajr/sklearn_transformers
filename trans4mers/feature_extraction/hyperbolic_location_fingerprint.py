@@ -1,10 +1,11 @@
+import math
 from sklearn.base import TransformerMixin
 
 
 class HyperbolicLocationFingerprint(TransformerMixin):
 
     def fit(self, X, y=None):
-        pass
+        return self
 
     def transform(self, X, y=None):
         return [self.hfl(x) for x in X]

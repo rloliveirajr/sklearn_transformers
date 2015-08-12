@@ -5,12 +5,12 @@ from sklearn.base import TransformerMixin
 class RelativeLocationFingerprint(TransformerMixin):
 
     def fit(self, X, y=None):
-        pass
+        return self
 
     def transform(self, X, y=None):
-        return [self.hfl(x) for x in X]
+        return [self.rfl(x) for x in X]
 
-    def hfl(self, row):
+    def rfl(self, row):
         values = row
         max_value = max(values)
 
