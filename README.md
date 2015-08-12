@@ -22,7 +22,7 @@ extractors.
   on the mean and standard variation among the variables of the row.
 
 
-# Instaling
+## Instaling
 
 First clone the repository to your machine:
 
@@ -36,10 +36,10 @@ Then, install the package using pip or easy_install:
 pip setup.py install
 ```
 
-# Using
+## Using
 ...
 
-# Contributions
+## Contributions
 
 Any contribution is welcome!
 
