@@ -1,16 +1,10 @@
 import math
-from sklearn.base import TransformerMixin
+from .fingerprint import Fingerprint
 
 
-class HyperbolicLocationFingerprint(TransformerMixin):
+class HyperbolicLocationFingerprint(Fingerprint):
 
-    def fit(self, X, y=None):
-        return self
-
-    def transform(self, X, y=None):
-        return [self.hfl(x) for x in X]
-
-    def hfl(self, row):
+    def trans_func_(self, row):
         '''
         M. Kjaergaard and C. Munk, "Hyperbolic Location Fingerprint:
         A calibration-free solution for handling differences in signal

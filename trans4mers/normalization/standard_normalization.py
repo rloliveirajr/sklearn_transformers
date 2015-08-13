@@ -8,5 +8,5 @@ class StandardNormalization(TransformerMixin):
         return self
 
     def transform(self, X, y=None):
-        normalization_func = lambda x: ((x - np.mean(x)) / np.std(x)
+        normalization_func = lambda x: ((x - np.mean(x)) / np.std(x))
         return list(map(normalization_func, X))

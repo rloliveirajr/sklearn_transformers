@@ -1,16 +1,10 @@
 import numpy as np
-from sklearn.base import TransformerMixin
+from .fingerprint import Fingerprint
 
 
-class RelativeLocationFingerprint(TransformerMixin):
+class RelativeLocationFingerprint(Fingerprint):
 
-    def fit(self, X, y=None):
-        return self
-
-    def transform(self, X, y=None):
-        return [self.rfl(x) for x in X]
-
-    def rfl(self, row):
+    def trans_func_(self, row):
         values = row
         max_value = max(values)
 
