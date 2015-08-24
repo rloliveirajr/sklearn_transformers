@@ -13,13 +13,14 @@ class RFSelection(TransformerMixin):
             self.n_features = n_features
 
     def fit(self, X, y=None):
-        self.rf.fit(X, y)
+        X_local = np.array(X)
+        self.rf.fit(X_local, y)
 
         importances = self.rf.feature_importances_
         ranking = np.argsort(importances)
 
         if self.n_features is None:
-            self.n_features = round(X.shape[1]/2)
+            self.n_features = round(X_local.shape[1] / 2)
 
         self.threshold = importances[ranking[self.n_features]]
         return self
