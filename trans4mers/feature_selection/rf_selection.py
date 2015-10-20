@@ -5,8 +5,9 @@ from sklearn.ensemble import RandomForestClassifier
 
 class RFSelection(TransformerMixin):
 
-    def __init__(self, n_features=None, n_estimators=100):
-        self.rf = RandomForestClassifier(n_estimators=n_estimators)
+    def __init__(self, n_features=None, n_estimators=100, random_state=0):
+        self.rf = RandomForestClassifier(
+            n_estimators=n_estimators, random_state=0)
         self.n_features = None
 
         if n_features is not None:
